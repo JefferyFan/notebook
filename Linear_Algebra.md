@@ -38,21 +38,82 @@ $$\begin{bmatrix}A_1 & A_2 \\ A_3 & A_4\end{bmatrix}\begin{bmatrix}B_1 & B_2 \\ 
     
 
 #### Inverse
+If A is square and invertible, $A^{-1}A=I=AA^{-1}$
 
+> **Note:** Invertible = nonsingular
 
+存在$A\overrightarrow{x}=0(\overrightarrow{x} \neq 0)$，则$A$不可逆。
+
+#### Find Inverse
+$$A=\begin{bmatrix}a&c \\ b&d \end{bmatrix}, find A^{-1}$$
+
+$$
+\begin{bmatrix}a&c&1&0 \\ b&b&0&1 \end{bmatrix} \Rightarrow 
+\begin{bmatrix}1&0&e&f \\ 0&1&g&h \end{bmatrix} \Rightarrow
+A^{-1}=\begin{bmatrix}e&f \\ g&h \end{bmatrix}
+$$
+
+Prove:
+suppose $EA=I$, $E$ is the emlination matrix.
+so, we get $E=A^{-1}$
+then, $E[A\;I]=[I\;E]=[I\;E^{-1}]$
+
+> **Note:** The inverse of $AB$ is $B^{-1}A^{-1}$ since $ABB^{-1}A^{-1}=I$
 
 --------------------
 Lecture 4
 ---
-
 #### Transpose
+formula: $(A^T)_{ij}=A_{ji}$
 
+formula: $AB=C \Rightarrow B^TA^T=C^T$
+
+> **Note:** $(A^{-1})^T = (A^T)^{-1}$
+> prove: $AA^{-1}=I \Rightarrow (A^{-1})A^T=I^T=I \Rightarrow (A^{-1})^T = (A^T)^{-1}$
+
+
+#### Permutations
+置换矩阵，用于行交换，通过交换Identity的行得到。
+
+Example: 
+$\begin{bmatrix}0&1&0 \\ 1&0&0 \\ 0&0&1 \end{bmatrix}A$交换了A的第一行和第二行。
+
+对于某一维度的矩阵，所有的Permutation形成一个族群。在族群内，$P^{-1}=P^T$，$P^{-1}$和${P^T}$都在族群内。
+
+
+#### Symmetric Matrix
+formaul: $A^T = A$
+
+> **Note:** $R^TR$ is always symetric.
+> prove: $(R^TR)^T=R^T(R^T)^T=R^TR$
+
+
+#### Product of elimination matrices $PA=LU$
+$A=\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}$
+
+Do elimination
+$E_{21}A=\begin{bmatrix}1&0 \\ -4&1 \end{bmatrix}\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}=\begin{bmatrix}2&1 \\ 0&3 \end{bmatrix}=U$
+
+Figure out L
+$A=\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}=\begin{bmatrix}1&0 \\ 4&1 \end{bmatrix}\begin{bmatrix}2&1 \\ 0&3 \end{bmatrix}=LU$
+
+> **Note:** $L=E^{-1}$
+
+also
+$A=\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}
+=\begin{bmatrix}1&0 \\ 4&1 \end{bmatrix}\begin{bmatrix}2&1 \\ 0&3 \end{bmatrix}
+=\begin{bmatrix}1&0 \\ 4&1 \end{bmatrix}\begin{bmatrix}2&0 \\ 0&3 \end{bmatrix}\begin{bmatrix}1 & 1 \over 2 \\ 0 & 1\end{bmatrix}
+=LDU$
+
+> **Note:** D is diagonal matrix, ,对角线上的元素不为0，非对角线上的元素都为0
 
 -------
 Lecture 5
 ---
 
 #### Vector Space
+combinations still in space. --- ***CLOSE**
+
 Requirements
 :   $V+W$ and $cV$ are in the space
 :   all combinations $cV+dW$ are in the space
@@ -61,8 +122,14 @@ Requirements
 #### Subspace
 That's a space: some vectors inside the given vector space, but still make up a **vector space** of their own.
 
-The union of two subspace P and L is not a subspace. (不一定)
-The Intersection of two subspace P and L is a subspace.
+The **union** of two subspace P and L is **not a subspace**. (不一定)
+The **intersection** of two subspace P and L is **a subspace**.
+
+> **Note:** All subspace of $R^2$:
+> 
+>  - $R^2$
+>  - any line through $\begin{bmatrix}0 \\0\end{bmatrix}$
+>  - $\begin{bmatrix}0 \\0\end{bmatrix}$ alone
 
 ----------------
 
@@ -71,13 +138,11 @@ Lecture 6
 
 $$Ax=\begin{bmatrix}1&1&2 \\ 2&1&3 \\ 3&1&4 \\ 4&1&5 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = b$$
 
-
-
 #### column space $C(A)$
 Definition
 :   all linear combinations of the columns. --- subspace of $R^m$
 
-> In the exmaple, the column space is subspace of $R^4$
+> **Note:** In the exmaple, the column space is subspace of $R^4$
 
 Which b's allow this system $Ax=b$ to be solved?
 :   Can solve $Ax=b$ exactly when b is $C(A)$
@@ -85,25 +150,26 @@ Which b's allow this system $Ax=b$ to be solved?
 Pivot Column
 :   the columns that are linear independent.
 
->In the example, pivot columns are column 1 and 2. Or column 2 and 3. 
+>**Note:** In the example, pivot columns are column 1 and 2. Or column 2 and 3. 
 Because $Column 3 = Column 1 + Column2$
 
 Dimension
-:   
+:	equals to the number of pivot columns.
 
 
 #### Nullspace $N(A)$
 Definition
 :   all solutions $x$ that $Ax=0$ --- subspace of $R^n$
 
-> **Example: ** N(A) is $c\begin{bmatrix}1 \\ 1 \\ -1 \end{bmatrix}$
+> **Note:**
+>
+> - N(A) is $c\begin{bmatrix}1 \\ 1 \\ -1 \end{bmatrix}$
+> - Nullspace must contains **ZERO vector**
 
-<br/>
-> **Note:** must contains **ZERO vector**
 
-
-#### row space
-
+#### Row space
+Definition
+:	all linear combinations of the rows. --- subspace of $R^n$
 
 --------------------
 Lecture 7
