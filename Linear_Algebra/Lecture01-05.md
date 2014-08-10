@@ -92,7 +92,7 @@ $A=\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}$
 Do elimination
 $E_{21}A=\begin{bmatrix}1&0 \\ -4&1 \end{bmatrix}\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}=\begin{bmatrix}2&1 \\ 0&3 \end{bmatrix}=U$
 
-Figure out L
+Figure out $L$
 $A=\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}=\begin{bmatrix}1&0 \\ 4&1 \end{bmatrix}\begin{bmatrix}2&1 \\ 0&3 \end{bmatrix}=LU$
 
 > **Note:** $L=E^{-1}$
@@ -106,16 +106,15 @@ $A=\begin{bmatrix}2&1 \\ 8&7 \end{bmatrix}
 > **Note:** D is diagonal matrix，非对角线上的元素都为0
 
 -------
+
 Lecture 5
 ---
-
 #### Vector Space
-combinations still in space. --- ***CLOSE**
+combinations still in space. --- **CLOSE**
 
 Requirements
 :   $V+W$ and $cV$ are in the space
 :   all combinations $cV+dW$ are in the space
-
 
 #### Subspace
 That's a space: some vectors inside the given vector space, but still make up a **vector space** of their own.
@@ -130,6 +129,3 @@ The **intersection** of two subspace P and L is **a subspace**.
 >  - $\begin{bmatrix}0 \\0\end{bmatrix}$ alone
 
 ----------------
-
-
-
