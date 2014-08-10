@@ -141,13 +141,13 @@ Property of Projection Matrix:
 4. $p^2=P$
 
 
-##### WHY project?
+#### WHY project?
 Because $Ax=b$ may have no solution. 
 Solve $A\widehat x=p$ instead. $p$ is projection of b onto column space.
 
 #### Three(or more) dimension projection.
 $p=A\widehat x$ Find $\widehat x$
-Key: $e=b-A\widehat x$ is perpendicular(误差) to the plane.
+Key: $e=b-A\widehat x$ is perpendicular(垂直) to the plane.
 $a_1,a_2$ are the basis of plane.
 
 $\begin{bmatrix}a_1^T \\ a_2^T \end{bmatrix}(b-A\widehat x)=\begin{bmatrix}0\\0\end{bmatrix} \Rightarrow A^T(b-A\widehat x)=0$
@@ -160,7 +160,7 @@ $\Rightarrow P=A(A^TA)^{-1}A^T$
 Property of Projection Matrix P:
 
 1. $P^T=P$
-2. $p^2=P$
+2. $P^2=P$
 
 
 #### Least Squares --- Fitting by a line
